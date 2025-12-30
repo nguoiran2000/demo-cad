@@ -3,8 +3,8 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Grid } from "@react-three/drei";
 import Building from "./components/Building";
 import DwgToSvgViewer from './components/DwgToSvgViewer';
-import FloorDetail from './components/FloorDetail';
 import { Text, Billboard } from "@react-three/drei";
+import SvgCadViewer from './components/SvgCadViewer';
 
 function App() {
   const [selectedFloor, setSelectedFloor] = useState(null);
@@ -66,7 +66,7 @@ function App() {
       </Canvas>
       </div>
       <div style={{width: '70%'}}>
-        <FloorDetail workerRef={workerRef} selectedFloor={selectedFloor} svgUrl={svgUrl} />
+        {selectedFloor && <SvgCadViewer />}
       </div>
     </div>
     </>
